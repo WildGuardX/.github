@@ -68,23 +68,63 @@ In addition, we support:
 
 ## 🔧 Technologies Used
 
-- **MCUs:** ESP32 / STM32
-- **Sensors:** Voltage, current, intrusion triggers
-- **Protocols:** MQTT, HTTP, SMS, LoRa, NB-IoT, GSM
-- **Edge AI:** Jetson Nano / Raspberry Pi with TensorFlow Lite / YOLOv5
-- **Frontend:** React / Flutter for dashboards
-- **Backend:** Node.js, Mosquitto, Firebase / AWS Lambda
+### 💻 Embedded Systems & Microcontrollers
+- **ESP32** – Primary IoT platform for remote fence control and sensor integration  
+- **STM32L0 Series** – Optional ultra-low-power nodes for standalone monitoring  
+- **GPIO / Relay Control** – For electric fence activation and physical override  
+- **ADC / Digital IO** – For voltage, current, tamper, and override sensors
+
+### 📡 Connectivity & Communication
+- **GSM/4G (SIM800L / SIM7600)** – Primary cellular-based communication for MQTT/SMS  
+- **NB-IoT (SIM7020 / BC95)** – For LPWAN-based data transmission  
+- **LoRa / LoRaWAN** – For internal section-to-gateway communication without internet  
+- **Wi-Fi** – For OTA updates or fallback when available  
+- **MQTT (QoS 1)** – Core messaging protocol for telemetry and commands  
+- **HTTP / REST API** – Backup communication and alert triggering  
+- **Offline Failover Logic** – Ensures the system works autonomously without cloud access
+
+### ⚙️ Sensors & Hardware Interfaces
+- **Voltage Sensors (e.g., ZMPT101B)** – To monitor fence output voltage  
+- **Current Sensors (e.g., ACS712)** – To detect flow status and faults  
+- **Tamper / Reed Switches / PIR Sensors** – For physical breach detection  
+- **Manual Override Switch** – Fence activation in emergencies  
+- **Battery Management ICs (e.g., TP4056, DW01)** – Battery protection and charge control  
+- **Solar Charging Modules** – For off-grid operation with battery backup  
+- **Status Indicators (LEDs / Buzzers)** – For visual and audible local alerts
+
+### ☁️ Cloud & Backend Systems
+- **Mosquitto MQTT Broker** – Handles real-time data exchange  
+- **Node.js / Express** – RESTful API backend and alert engine  
+- **Firebase / AWS Lambda** – Cloud automation and push alert services  
+- **MQTT Explorer / Grafana** – Development and live data visualization
+
+### 🌐 Frontend / Dashboard
+- **React + TailwindCSS** – Modern web dashboard with real-time updates  
+- **Flutter** *(planned)* – Cross-platform mobile app for farmers and admins  
+- **Mapbox / Leaflet.js** – Visual heatmaps and cluster-based monitoring views  
+- **WebSocket / MQTT.js** – For real-time UI updates and interaction
+
+### 🤖 AI & Computer Vision (Phase 3)
+- **Jetson Nano / Raspberry Pi 4** – Edge inference for CV-based detection  
+- **YOLOv5 / YOLOv8 / MobileNet SSD** – Wildlife object detection models  
+- **OpenCV + TensorFlow Lite / ONNX Runtime** – Real-time image processing  
+- **Infrared / USB Cameras** – 24/7 animal movement detection in all conditions
 
 ---
 
 ## 🔔 Notifications & Alert Channels
 
-- SMS (GSM module or cloud API)
-- WhatsApp (via Twilio or Business API)
-- Email (SMTP or 3rd-party API)
-- Future: Telegram, mobile push notifications
+| Channel        | Purpose                                                          | Implementation                                                  |
+|----------------|------------------------------------------------------------------|------------------------------------------------------------------|
+| **SMS Alerts** | Critical alerts like fence OFF, breach, low voltage, or failure | GSM Module (e.g., SIM800L) or via Twilio SMS API                |
+| **WhatsApp**   | Real-time updates on system health, animal detection, events     | WhatsApp Business API (e.g., via Twilio or Gupshup integration) |
+| **Email**      | Periodic reports, daily summaries, and system alerts             | SMTP (Gmail, SendGrid) or cloud-based mail APIs                 |
+| **MQTT**       | Fence state, sensor health, alerts, and commands                 | MQTT protocol with QoS 1, retained messages                     |
+| **App Push** *(Planned)* | Mobile notifications for users and workers                   | Firebase Cloud Messaging (FCM)                                  |
+| **LED / Buzzer** | On-device visual and audible feedback for local users         | GPIO-controlled local alert modules                             |
+| **Web Dashboard** | Live alert banners, logs, and cluster health markers         | React frontend connected via MQTT or WebSockets                 |
 
----
+> 💡 Alerts are intelligently routed via available channels with **failover logic** to ensure delivery, even during limited connectivity scenarios.
 
 ## 🤝 Contribute to the Mission
 
