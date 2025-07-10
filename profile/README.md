@@ -55,9 +55,9 @@ In addition, we support:
 
 | Repository | Purpose |
 |------------|---------|
-| [`wildguardx-core`](https://github.com/WildGuardX/wildguardx-core) | Smart fence control firmware and hardware |
-| [`wildguardx-track`](https://github.com/WildGuardX/wildguardx-track) | Health & fault monitoring via sensors |
-| [`wildguardx-visionai`](https://github.com/WildGuardX/wildguardx-visionai) | AI-powered detection of elephants using CV |
+| [`wildguardx-link`](https://github.com/WildGuardX/wildguardx-link) | Smart fence control firmware and hardware |
+| [`wildguardx-pulse`](https://github.com/WildGuardX/wildguardx-pulse) | Health & fault monitoring via sensors |
+| [`wildguardx-vision`](https://github.com/WildGuardX/wildguardx-vision) | AI-powered detection of elephants using CV |
 | [`wildguardx-dashboard`](https://github.com/WildGuardX/wildguardx-dashboard) | Web/mobile interface for control & analytics |
 | [`wildguardx-cloud`](https://github.com/WildGuardX/wildguardx-cloud) | MQTT, alerts (SMS, Email, WhatsApp), APIs |
 | [`wildguardx-hardware`](https://github.com/WildGuardX/wildguardx-hardware) | Power systems, PCBs, enclosure design |
