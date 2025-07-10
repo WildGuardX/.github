@@ -4,6 +4,13 @@
 
 ---
 
+## 📈 Our Vision
+
+> **“Protecting Farms. Empowering Farmers. Saving Wildlife.”**  
+> Through technology, we aim to foster coexistence between communities and nature, reducing human-elephant conflict and ensuring sustainable agriculture.
+
+---
+
 ## 🌍 The Problem
 
 Elephant intrusions into farms and villages are a **frequent and severe problem in rural Sri Lanka**. Despite the use of electric fences, many farmers face:
@@ -138,15 +145,6 @@ We believe in open collaboration and community-driven development.
 - 🌍 Collaborate on deployments with NGOs or institutions
 
 > 🔗 Join our discussions [here](https://github.com/WildGuardX/.github/discussions) *(enable this if you haven’t already)*
-
----
-
-## 📈 Our Vision
-
-> **“Protecting Farms. Empowering Farmers. Saving Wildlife.”**  
-> Through technology, we aim to foster coexistence between communities and nature, reducing human-elephant conflict and ensuring sustainable agriculture.
-
----
 
 ## 📬 Contact Us
 
